@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dark Theme (Default) - More Accessible */
+  --background: #111827;
+  --surface: #1A1F2E;
+  --primary: #FFFFFF;
+  --secondary: #94A3B8;
+  --accent: #3B82F6;
+  --border: #2A2F3E;
+}
+
+[data-theme="light"] {
+  /* Light Theme */
+  --background: #FFFFFF;
+  --surface: #F8FAFC;
+  --primary: #0F172A;
+  --secondary: #64748B;
+  --accent: #3B82F6;
+  --border: #E2E8F0;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+/* Custom gradient animation */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+  opacity: 0.8;
+}
+
+/* Utility classes */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent), #8B5CF6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), #8B5CF6);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+/* Theme transition */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Tailwind utility classes for theme support */
+.bg-background {
+  background-color: var(--background);
+}
+
+.bg-surface {
+  background-color: var(--surface);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.border-border {
+  border-color: var(--border);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
