@@ -14,6 +14,7 @@ import peraImg from '../assets/pera.png'
 // Import project screenshots
 import moviesAppImg from '../assets/movies-app.png'
 import weatherAppImg from '../assets/weather-app.png'
+import quizAppImg from '../assets/quizApp.png'
 
 const Home = () => {
   const [formData, setFormData] = useState({
@@ -182,7 +183,7 @@ const Home = () => {
       technologies: ["React", "TypeScript", "CSS", "JavaScript", "Create React App"],
       link: "#",
       github: "https://github.com/sametert/quizApp-Typescript",
-      image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=400&h=250&fit=crop&crop=center"
+      image: quizAppImg
     },
     {
       title: "Weather App",
