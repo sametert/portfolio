@@ -168,7 +168,7 @@ const Navbar = () => {
           }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-          <div className="px-4 pt-4 pb-6 bg-surface/30 backdrop-blur-xl border border-border/50 rounded-2xl mt-4 mx-2">
+          <div className="px-4 pt-4 pb-6 bg-surface/30 backdrop-blur-xl border border-border/50 rounded-2xl mt-4 mx-2 shadow-2xl">
             <div className="space-y-3">
               {navItems.map((item, index) => (
                 <motion.button

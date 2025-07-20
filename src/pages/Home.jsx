@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaPhone, FaReact, FaNodeJs, FaShopify, FaCss3Alt, FaHtml5, FaGitAlt, FaFigma, FaAws } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaPhone, FaReact, FaNodeJs, FaShopify, FaCss3Alt, FaHtml5, FaGitAlt, FaFigma, FaAws, FaDownload } from 'react-icons/fa'
 import { MdEmail, MdLocationOn, MdWork, MdSchool } from 'react-icons/md'
 import { HiArrowDown, HiExternalLink } from 'react-icons/hi'
 import { SiNextdotjs, SiTailwindcss, SiJavascript, SiTypescript, SiMongodb, SiExpress, SiPostgresql, SiRedux, SiSass, SiVite } from 'react-icons/si'
@@ -56,6 +56,17 @@ const Home = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
+  }
+
+  const downloadResume = () => {
+    // Create a link element
+    const link = document.createElement('a')
+    link.href = '/samed-erturk-resume.pdf' // Resume file path
+    link.download = 'Samed-Erturk-Resume.pdf'
+    link.target = '_blank'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
   }
 
   const handleInputChange = (e) => {
@@ -147,7 +158,7 @@ const Home = () => {
       color: "text-blue-500",
       bgColor: "bg-blue-500/10",
       borderColor: "border-blue-500/20",
-      tools: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Git", "Agile", "Zustand"]
+      tools: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Git", "Zustand"]
     },
     {
       title: "UI Developer Intern",
@@ -243,10 +254,10 @@ const Home = () => {
 
             {/* Main Heading */}
             <motion.h1
-              className="text-6xl md:text-8xl lg:text-9xl font-black mb-10 leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-black mb-6 md:mb-10 leading-tight"
               variants={fadeInUp}
             >
-              <span className="block text-primary/80 mb-4">Hi, I'm</span>
+              <span className="block text-primary/80 mb-2 md:mb-4">Hi, I'm</span>
               <span className="block bg-gradient-to-r from-accent via-blue-400 to-purple-500 bg-clip-text text-transparent animate-gradient bg-[length:200%_200%]">
                 Samed Ertürk
               </span>
@@ -254,11 +265,11 @@ const Home = () => {
 
             {/* Animated Job Title */}
             <motion.div
-              className="mb-10"
+              className="mb-6 md:mb-10"
               variants={fadeInUp}
             >
-              <div className="relative h-16 md:h-20 flex items-center justify-center">
-                <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary absolute">
+              <div className="relative h-12 sm:h-14 md:h-16 lg:h-20 flex items-center justify-center">
+                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-primary absolute">
                   {jobTitles[currentTitleIndex].split('').map((char, index) => (
                     <motion.span
                       key={`${currentTitleIndex}-${index}`}
@@ -305,12 +316,12 @@ const Home = () => {
                   transition={{ duration: 1.2, ease: "easeInOut" }}
                 />
               </div>
-              <div className="w-24 h-1 bg-gradient-to-r from-accent to-blue-500 mx-auto mt-4 rounded-full"></div>
+              <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-accent to-blue-500 mx-auto mt-2 md:mt-4 rounded-full"></div>
             </motion.div>
 
             {/* Enhanced Description */}
             <motion.p
-              className="text-base md:text-lg text-secondary mb-12 max-w-4xl mx-auto leading-relaxed font-light"
+              className="text-sm sm:text-base md:text-lg text-secondary mb-8 md:mb-12 max-w-4xl mx-auto leading-relaxed font-light px-4"
               variants={fadeInUp}
             >
               I craft <span className="text-accent font-semibold">modern, responsive</span> web applications using 
@@ -324,31 +335,31 @@ const Home = () => {
 
             {/* Stats Cards */}
             <motion.div
-              className="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto mb-12"
+              className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-8 max-w-2xl mx-auto mb-8 md:mb-12 px-4"
               variants={fadeInUp}
             >
-              <div className="text-center p-4 bg-surface/30 border border-border/50 rounded-xl backdrop-blur-sm">
-                <div className="text-2xl md:text-3xl font-bold text-accent">3+</div>
-                <div className="text-sm text-secondary">Years Experience</div>
+              <div className="text-center p-3 sm:p-4 bg-surface/30 border border-border/50 rounded-xl backdrop-blur-sm">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent">3+</div>
+                <div className="text-xs sm:text-sm text-secondary">Years Experience</div>
               </div>
-              <div className="text-center p-4 bg-surface/30 border border-border/50 rounded-xl backdrop-blur-sm">
-                <div className="text-2xl md:text-3xl font-bold text-accent">10+</div>
-                <div className="text-sm text-secondary">Projects Completed</div>
+              <div className="text-center p-3 sm:p-4 bg-surface/30 border border-border/50 rounded-xl backdrop-blur-sm">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent">10+</div>
+                <div className="text-xs sm:text-sm text-secondary">Projects Completed</div>
               </div>
-              <div className="text-center p-4 bg-surface/30 border border-border/50 rounded-xl backdrop-blur-sm">
-                <div className="text-2xl md:text-3xl font-bold text-accent">100%</div>
-                <div className="text-sm text-secondary">Client Satisfaction</div>
+              <div className="text-center p-3 sm:p-4 bg-surface/30 border border-border/50 rounded-xl backdrop-blur-sm">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent">100%</div>
+                <div className="text-xs sm:text-sm text-secondary">Client Satisfaction</div>
               </div>
             </motion.div>
 
             {/* Enhanced CTA Buttons */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 md:mb-16 px-4"
               variants={fadeInUp}
             >
               <button 
                 onClick={() => scrollToSection('contact')} 
-                className="group relative px-8 py-4 bg-accent text-white font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-accent/25"
+                className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-accent text-white font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-accent/25"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-accent to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative flex items-center justify-center">
@@ -357,8 +368,18 @@ const Home = () => {
                 </span>
               </button>
               <button 
+                onClick={downloadResume}
+                className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-green-600 text-white font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative flex items-center justify-center">
+                  <FaDownload className="mr-2" />
+                  Download Resume
+                </span>
+              </button>
+              <button 
                 onClick={() => scrollToSection('projects')} 
-                className="group px-8 py-4 bg-surface border-2 border-border text-primary font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:border-accent hover:bg-accent/5"
+                className="group px-6 sm:px-8 py-3 sm:py-4 bg-surface border-2 border-border text-primary font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:border-accent hover:bg-accent/5"
               >
                 <span className="flex items-center justify-center">
                   <HiExternalLink className="mr-2" />
@@ -369,43 +390,43 @@ const Home = () => {
 
             {/* Contact Info Cards */}
             <motion.div
-              className="flex flex-wrap justify-center gap-6 mb-16"
+              className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-12 md:mb-16 px-4"
               variants={fadeInUp}
             >
-              <div className="flex items-center gap-3 px-4 py-2 bg-surface/30 border border-border/50 rounded-lg backdrop-blur-sm">
-                <MdEmail className="text-accent text-lg" />
-                <span className="text-sm text-secondary">samederturk55@gmail.com</span>
+              <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 bg-surface/30 border border-border/50 rounded-lg backdrop-blur-sm">
+                <MdEmail className="text-accent text-base sm:text-lg" />
+                <span className="text-xs sm:text-sm text-secondary">samederturk55@gmail.com</span>
               </div>
-              <div className="flex items-center gap-3 px-4 py-2 bg-surface/30 border border-border/50 rounded-lg backdrop-blur-sm">
-                <FaPhone className="text-accent text-lg" />
-                <span className="text-sm text-secondary">05079887217</span>
+              <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 bg-surface/30 border border-border/50 rounded-lg backdrop-blur-sm">
+                <FaPhone className="text-accent text-base sm:text-lg" />
+                <span className="text-xs sm:text-sm text-secondary">05079887217</span>
               </div>
-              <div className="flex items-center gap-3 px-4 py-2 bg-surface/30 border border-border/50 rounded-lg backdrop-blur-sm">
-                <MdLocationOn className="text-accent text-lg" />
-                <span className="text-sm text-secondary">Ankara, Turkey</span>
+              <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 bg-surface/30 border border-border/50 rounded-lg backdrop-blur-sm">
+                <MdLocationOn className="text-accent text-base sm:text-lg" />
+                <span className="text-xs sm:text-sm text-secondary">Ankara, Turkey</span>
               </div>
             </motion.div>
 
             {/* Enhanced Social Links with more spacing */}
             <motion.div
-              className="flex justify-center space-x-8 mb-16"
+              className="flex justify-center space-x-6 sm:space-x-8 mb-12 md:mb-16"
               variants={fadeInUp}
             >
               <a
                 href="https://github.com/sametert"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-16 h-16 bg-surface border border-border rounded-xl flex items-center justify-center text-secondary transition-all duration-300 hover:scale-110 hover:text-accent hover:border-accent hover:shadow-lg hover:shadow-accent/25"
+                className="group w-12 h-12 sm:w-16 sm:h-16 bg-surface border border-border rounded-xl flex items-center justify-center text-secondary transition-all duration-300 hover:scale-110 hover:text-accent hover:border-accent hover:shadow-lg hover:shadow-accent/25"
               >
-                <FaGithub size={28} />
+                <FaGithub size={20} className="sm:w-7 sm:h-7" />
               </a>
               <a
                 href="https://linkedin.com/in/sametert"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-16 h-16 bg-surface border border-border rounded-xl flex items-center justify-center text-secondary transition-all duration-300 hover:scale-110 hover:text-accent hover:border-accent hover:shadow-lg hover:shadow-accent/25"
+                className="group w-12 h-12 sm:w-16 sm:h-16 bg-surface border border-border rounded-xl flex items-center justify-center text-secondary transition-all duration-300 hover:scale-110 hover:text-accent hover:border-accent hover:shadow-lg hover:shadow-accent/25"
               >
-                <FaLinkedin size={28} />
+                <FaLinkedin size={20} className="sm:w-7 sm:h-7" />
               </a>
             </motion.div>
           </motion.div>
@@ -416,19 +437,19 @@ const Home = () => {
       <section id="about" className="section bg-surface/30">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8">
                 About <span className="gradient-text">Me</span>
               </h2>
-              <div className="max-w-4xl mx-auto space-y-8">
-                <div className="bg-surface/20 rounded-2xl p-8 backdrop-blur-sm">
-                  <p className="text-secondary leading-relaxed text-lg mb-6">
+              <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
+                <div className="bg-surface/20 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
+                  <p className="text-secondary leading-relaxed text-sm sm:text-base md:text-lg mb-4 md:mb-6">
                     I'm a passionate <span className="text-accent font-semibold">frontend developer</span> and 
                     <span className="text-primary font-semibold"> digital innovator</span> with experience in modern web technologies. 
                     I bring both technical expertise and entrepreneurial mindset to every project, specializing in creating 
                     <span className="text-accent font-semibold"> innovative digital solutions</span> that drive business growth.
                   </p>
-                  <p className="text-secondary leading-relaxed text-lg">
+                  <p className="text-secondary leading-relaxed text-sm sm:text-base md:text-lg">
                     Driven by <span className="text-accent font-semibold">innovation</span>, I'm constantly exploring new opportunities to create value in the digital space. 
                     My vision is to build <span className="text-primary font-semibold">scalable digital solutions</span> that solve real-world problems and 
                     <span className="text-accent font-semibold"> empower businesses</span> to thrive in the digital economy through 
@@ -440,14 +461,14 @@ const Home = () => {
 
             {/* Animated Skills Section */}
             <div className="relative flex items-center justify-center mb-20">
-              <div className="relative w-96 h-96 mx-auto bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-indigo-500/5 border border-blue-500/30 rounded-full backdrop-blur-sm">
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 mx-auto bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-indigo-500/5 border border-blue-500/30 rounded-full backdrop-blur-sm">
                 {/* Central Skills Text */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
-                    <h3 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-accent via-blue-400 to-purple-500 bg-clip-text text-transparent mb-2">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-r from-accent via-blue-400 to-purple-500 bg-clip-text text-transparent mb-2">
                       My Skills
                     </h3>
-                    <div className="w-16 h-1 bg-gradient-to-r from-accent to-blue-500 mx-auto rounded-full"></div>
+                    <div className="w-8 sm:w-12 md:w-16 h-1 bg-gradient-to-r from-accent to-blue-500 mx-auto rounded-full"></div>
                   </div>
                 </div>
 
@@ -466,12 +487,12 @@ const Home = () => {
                   { icon: SiRedux, color: '#764ABC', name: 'Liquid', angle: 300 },
                   { icon: SiSass, color: '#CC6699', name: 'Zustand', angle: 330 }
                 ].map((skill, index) => {
-                  const radius = 160
+                  const radius = window.innerWidth < 640 ? 100 : window.innerWidth < 768 ? 120 : 160
                   
                   return (
                     <motion.div
                       key={skill.name}
-                      className="absolute w-16 h-16 rounded-full bg-background/80 backdrop-blur-sm border border-border/50 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                      className="absolute w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full bg-background/80 backdrop-blur-sm border border-border/50 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
                       style={{
                         left: '50%',
                         top: '50%',
@@ -479,19 +500,19 @@ const Home = () => {
                       initial={{ 
                         opacity: 0, 
                         scale: 0,
-                        x: Math.cos((skill.angle * Math.PI) / 180) * radius - 32,
-                        y: Math.sin((skill.angle * Math.PI) / 180) * radius - 32,
+                        x: Math.cos((skill.angle * Math.PI) / 180) * radius - (window.innerWidth < 640 ? 20 : window.innerWidth < 768 ? 24 : 32),
+                        y: Math.sin((skill.angle * Math.PI) / 180) * radius - (window.innerWidth < 640 ? 20 : window.innerWidth < 768 ? 24 : 32),
                       }}
                       animate={{ 
                         opacity: 1, 
                         scale: 1,
                         x: [
-                          Math.cos((skill.angle * Math.PI) / 180) * radius - 32,
-                          Math.cos(((skill.angle + 360) * Math.PI) / 180) * radius - 32,
+                          Math.cos((skill.angle * Math.PI) / 180) * radius - (window.innerWidth < 640 ? 20 : window.innerWidth < 768 ? 24 : 32),
+                          Math.cos(((skill.angle + 360) * Math.PI) / 180) * radius - (window.innerWidth < 640 ? 20 : window.innerWidth < 768 ? 24 : 32),
                         ],
                         y: [
-                          Math.sin((skill.angle * Math.PI) / 180) * radius - 32,
-                          Math.sin(((skill.angle + 360) * Math.PI) / 180) * radius - 32,
+                          Math.sin((skill.angle * Math.PI) / 180) * radius - (window.innerWidth < 640 ? 20 : window.innerWidth < 768 ? 24 : 32),
+                          Math.sin(((skill.angle + 360) * Math.PI) / 180) * radius - (window.innerWidth < 640 ? 20 : window.innerWidth < 768 ? 24 : 32),
                         ],
                         rotate: [0, 360]
                       }}
@@ -522,7 +543,7 @@ const Home = () => {
                       }}
                     >
                       <skill.icon 
-                        size={28} 
+                        size={window.innerWidth < 640 ? 16 : window.innerWidth < 768 ? 20 : 28} 
                         style={{ color: skill.color }}
                         className="group-hover:scale-110 transition-transform duration-300"
                       />
@@ -789,19 +810,19 @@ const Home = () => {
       <section id="projects" className="section">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8">
                 My <span className="gradient-text">Projects</span>
               </h2>
               <div className="max-w-3xl mx-auto">
-                <p className="text-secondary leading-relaxed text-lg">
+                <p className="text-secondary leading-relaxed text-sm sm:text-base md:text-lg">
                   Here are some of the projects I've worked on, showcasing my skills in frontend development, 
                   e-commerce optimization, and modern web technologies.
                 </p>
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {projects.map((project, index) => (
                 <motion.div
                   key={index}
@@ -812,7 +833,7 @@ const Home = () => {
                   transition={{ delay: index * 0.2 }}
                 >
                   {/* Project Image */}
-                  <div className="relative h-48 mb-4 rounded-lg overflow-hidden">
+                  <div className="relative h-40 sm:h-48 mb-4 rounded-lg overflow-hidden">
                     <img 
                       src={project.image} 
                       alt={project.title}
@@ -822,7 +843,7 @@ const Home = () => {
                   </div>
 
                   <div className="flex items-start justify-between mb-4">
-                    <h3 className="text-xl font-semibold text-primary">{project.title}</h3>
+                    <h3 className="text-lg sm:text-xl font-semibold text-primary">{project.title}</h3>
                     <div className="flex space-x-2">
                       {project.link !== "#" && (
                         <a
@@ -831,7 +852,7 @@ const Home = () => {
                           rel="noopener noreferrer"
                           className="text-secondary hover:text-accent transition-colors"
                         >
-                          <HiExternalLink size={18} />
+                          <HiExternalLink size={16} className="sm:w-5 sm:h-5" />
                         </a>
                       )}
                       <a
@@ -840,18 +861,18 @@ const Home = () => {
                         rel="noopener noreferrer"
                         className="text-secondary hover:text-accent transition-colors"
                       >
-                        <FaGithub size={18} />
+                        <FaGithub size={16} className="sm:w-5 sm:h-5" />
                       </a>
                     </div>
                   </div>
                   
-                  <p className="text-secondary mb-4 leading-relaxed">{project.description}</p>
+                  <p className="text-secondary mb-4 leading-relaxed text-sm sm:text-base">{project.description}</p>
                   
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-400 text-xs rounded-full border border-blue-500/30"
+                        className="px-2 sm:px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-400 text-xs rounded-full border border-blue-500/30"
                       >
                         {tech}
                       </span>
@@ -889,70 +910,70 @@ const Home = () => {
       <section id="contact" className="section bg-surface/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8">
                 Get In <span className="gradient-text">Touch</span>
               </h2>
               <div className="max-w-2xl mx-auto">
-                <p className="text-secondary leading-relaxed text-lg">
+                <p className="text-secondary leading-relaxed text-sm sm:text-base md:text-lg">
                   I'm always open to discussing new opportunities, interesting projects, 
                   or just having a chat about technology and development.
                 </p>
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               {/* Contact Info */}
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 <div className="card bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-indigo-500/5 border border-blue-500/30 shadow-lg">
-                  <div className="flex items-center space-x-4">
-                    <MdEmail className="text-accent text-2xl" />
+                  <div className="flex items-center space-x-3 md:space-x-4">
+                    <MdEmail className="text-accent text-xl md:text-2xl" />
                     <div>
-                      <h3 className="font-semibold text-primary">Email</h3>
-                      <p className="text-secondary">samederturk55@gmail.com</p>
+                      <h3 className="font-semibold text-primary text-sm md:text-base">Email</h3>
+                      <p className="text-secondary text-xs md:text-sm">samederturk55@gmail.com</p>
                     </div>
                   </div>
                 </div>
                 
                 <div className="card bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-indigo-500/5 border border-blue-500/30 shadow-lg">
-                  <div className="flex items-center space-x-4">
-                    <FaPhone className="text-accent text-2xl" />
+                  <div className="flex items-center space-x-3 md:space-x-4">
+                    <FaPhone className="text-accent text-xl md:text-2xl" />
                     <div>
-                      <h3 className="font-semibold text-primary">Phone</h3>
-                      <p className="text-secondary">05079887217</p>
+                      <h3 className="font-semibold text-primary text-sm md:text-base">Phone</h3>
+                      <p className="text-secondary text-xs md:text-sm">05079887217</p>
                     </div>
                   </div>
                 </div>
                 
                 <div className="card bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-indigo-500/5 border border-blue-500/30 shadow-lg">
-                  <div className="flex items-center space-x-4">
-                    <MdLocationOn className="text-accent text-2xl" />
+                  <div className="flex items-center space-x-3 md:space-x-4">
+                    <MdLocationOn className="text-accent text-xl md:text-2xl" />
                     <div>
-                      <h3 className="font-semibold text-primary">Location</h3>
-                      <p className="text-secondary">Ankara, Turkey</p>
+                      <h3 className="font-semibold text-primary text-sm md:text-base">Location</h3>
+                      <p className="text-secondary text-xs md:text-sm">Ankara, Turkey</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Social Links */}
                 <div className="card bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-indigo-500/5 border border-blue-500/30 shadow-lg">
-                  <h3 className="font-semibold text-primary mb-4">Connect with me</h3>
-                  <div className="flex space-x-4">
+                  <h3 className="font-semibold text-primary text-sm md:text-base mb-3 md:mb-4">Connect with me</h3>
+                  <div className="flex space-x-3 md:space-x-4">
                     <a
                       href="https://github.com/sametert"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-full flex items-center justify-center text-blue-400 hover:text-accent hover:border-accent transition-all duration-300"
+                      className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-full flex items-center justify-center text-blue-400 hover:text-accent hover:border-accent transition-all duration-300"
                     >
-                      <FaGithub size={18} />
+                      <FaGithub size={14} className="md:w-5 md:h-5" />
                     </a>
                     <a
                       href="https://linkedin.com/in/sametert"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-full flex items-center justify-center text-blue-400 hover:text-accent hover:border-accent transition-all duration-300"
+                      className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-full flex items-center justify-center text-blue-400 hover:text-accent hover:border-accent transition-all duration-300"
                     >
-                      <FaLinkedin size={18} />
+                      <FaLinkedin size={14} className="md:w-5 md:h-5" />
                     </a>
                   </div>
                 </div>
@@ -960,7 +981,7 @@ const Home = () => {
 
               {/* Contact Form */}
               <div className="card bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-indigo-500/5 border border-blue-500/30 shadow-lg">
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-primary mb-1">Name</label>
                     <input
@@ -968,7 +989,7 @@ const Home = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 bg-background border border-blue-500/30 rounded-lg focus:outline-none focus:border-accent transition-colors text-primary"
+                      className="w-full px-3 py-2 bg-background border border-blue-500/30 rounded-lg focus:outline-none focus:border-accent transition-colors text-primary text-sm"
                       placeholder="Your name"
                       required
                     />
@@ -981,7 +1002,7 @@ const Home = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 bg-background border border-blue-500/30 rounded-lg focus:outline-none focus:border-accent transition-colors text-primary"
+                      className="w-full px-3 py-2 bg-background border border-blue-500/30 rounded-lg focus:outline-none focus:border-accent transition-colors text-primary text-sm"
                       placeholder="your.email@example.com"
                       required
                     />
@@ -994,13 +1015,13 @@ const Home = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 bg-background border border-blue-500/30 rounded-lg focus:outline-none focus:border-accent transition-colors text-primary resize-none"
+                      className="w-full px-3 py-2 bg-background border border-blue-500/30 rounded-lg focus:outline-none focus:border-accent transition-colors text-primary resize-none text-sm"
                       placeholder="Tell me about your project..."
                       required
                     />
                   </div>
                   
-                  <button type="submit" className="btn btn-primary w-full py-2" disabled={isSubmitting}>
+                  <button type="submit" className="btn btn-primary w-full py-2 text-sm" disabled={isSubmitting}>
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
 
